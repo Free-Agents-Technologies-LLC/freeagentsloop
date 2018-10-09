@@ -1,0 +1,27 @@
+{
+  "name": "ratings",
+  "plural": "ratings",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "rator": {
+      "type": "number",
+      "required": true
+    },
+    "ratee": {
+      "type": "number",
+      "required": true
+    },
+    "rating": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

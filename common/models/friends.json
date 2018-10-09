@@ -1,0 +1,39 @@
+{
+  "name": "friends",
+  "plural": "friends",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "requestor_id": {
+      "type": "number",
+      "required": true
+    },
+    "acceptor_id": {
+      "type": "number",
+      "required": true
+    },
+    "accepted": {
+      "type": "number",
+      "required": true
+    },
+    "declined": {
+      "type": "number",
+      "required": true
+    },
+    "pending": {
+      "type": "number",
+      "required": true
+    },
+    "deleted": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

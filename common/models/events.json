@@ -1,0 +1,63 @@
+{
+  "name": "events",
+  "plural": "events",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "creator": {
+      "type": "number",
+      "required": true
+    },
+    "sport_id": {
+      "type": "number",
+      "required": true
+    },
+    "position_id": {
+      "type": "number",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "time": {
+      "type": "time",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "state": {
+      "type": "string",
+      "required": true
+    },
+    "zip": {
+      "type": "string",
+      "required": true
+    },
+    "lat": {
+      "type": "geopoint",
+      "required": true
+    },
+    "long": {
+      "type": "geopoint",
+      "required": true
+    },
+    "players": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

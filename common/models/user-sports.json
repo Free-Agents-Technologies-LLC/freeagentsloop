@@ -1,0 +1,31 @@
+{
+  "name": "user_sports",
+  "plural": "usersports",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "user_id": {
+      "type": "number",
+      "required": true
+    },
+    "sport_id": {
+      "type": "number",
+      "required": true
+    },
+    "position_id": {
+      "type": "number",
+      "required": true
+    },
+    "skill_id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

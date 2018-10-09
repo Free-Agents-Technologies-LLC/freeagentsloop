@@ -1,0 +1,35 @@
+{
+  "name": "event_users",
+  "plural": "eventusers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "event_id": {
+      "type": "number",
+      "required": true
+    },
+    "user_id": {
+      "type": "number",
+      "required": true
+    },
+    "interested": {
+      "type": "number",
+      "required": true
+    },
+    "accepted": {
+      "type": "number",
+      "required": true
+    },
+    "rejected": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

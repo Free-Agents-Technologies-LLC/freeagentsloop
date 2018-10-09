@@ -1,0 +1,89 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Message": {
+    "dataSource": null
+  },
+  "sports": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "user_sports": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "skill": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "ratings": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "positions": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "notifications": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "interested_sports": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "friends": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "advertisements": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "events": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "sponsors": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "fausers": {
+    "dataSource": "mysqlDs",
+    "public": true
+  }
+}

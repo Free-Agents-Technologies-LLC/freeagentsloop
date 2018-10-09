@@ -1,0 +1,23 @@
+{
+  "name": "positions",
+  "plural": "positions",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "sport_id": {
+      "type": "number",
+      "required": true
+    },
+    "position": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

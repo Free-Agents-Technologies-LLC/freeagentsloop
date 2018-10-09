@@ -1,0 +1,66 @@
+{
+  "name": "advertisements",
+  "plural": "advertisements",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "sponsor_id": {
+      "type": "number",
+      "required": true
+    },
+    "text": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "phone_ext": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "end_date": {
+      "type": "date",
+      "required": true
+    },
+    "radius": {
+      "type": "number",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "state": {
+      "type": "string",
+      "required": true
+    },
+    "zip_code": {
+      "type": "string",
+      "required": true
+    },
+    "lat": {
+      "type": "geopoint",
+      "required": true
+    },
+    "long": {
+      "type": "geopoint",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
