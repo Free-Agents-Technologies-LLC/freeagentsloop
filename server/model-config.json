@@ -89,5 +89,9 @@
   "fausers": {
     "dataSource": "mysqlDs",
     "public": true
+  },
+  "game_type": {
+    "dataSource": "mysqlDs",
+    "public": true
   }
 }
