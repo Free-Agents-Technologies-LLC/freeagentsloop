@@ -50,11 +50,7 @@
       "type": "string",
       "required": true
     },
-    "lat": {
-      "type": "geopoint",
-      "required": true
-    },
-    "long": {
+    "location": {
       "type": "geopoint",
       "required": true
     }

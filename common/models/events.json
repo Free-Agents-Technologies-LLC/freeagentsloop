@@ -27,9 +27,13 @@
       "type": "date",
       "required": true
     },
-    "time": {
-      "type": "time",
+    "address": {
+      "type": "string",
       "required": true
+    },
+    "address2": {
+      "type": "string",
+      "required": false
     },
     "city": {
       "type": "string",
@@ -43,11 +47,7 @@
       "type": "string",
       "required": true
     },
-    "lat": {
-      "type": "geopoint",
-      "required": true
-    },
-    "long": {
+    "location": {
       "type": "geopoint",
       "required": true
     },

@@ -78,6 +78,10 @@
     "dataSource": "mysqlDs",
     "public": true
   },
+  "event_users": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
   "sponsors": {
     "dataSource": "mysqlDs",
     "public": true

@@ -29,7 +29,7 @@
     },
     "website": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "address1": {
       "type": "string",
@@ -37,7 +37,7 @@
     },
     "address2": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "city": {
       "type": "string",
@@ -51,29 +51,25 @@
       "type": "string",
       "required": true
     },
-    "lat": {
-      "type": "geopoint",
-      "required": true
-    },
-    "long": {
+    "location": {
       "type": "geopoint",
       "required": true
     },
     "logo": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "facebook": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "instagram": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "twitter": {
       "type": "string",
-      "required": true
+      "required": false
     }
   },
   "validations": [],

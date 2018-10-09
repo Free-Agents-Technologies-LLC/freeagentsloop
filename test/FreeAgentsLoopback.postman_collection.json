@@ -1,0 +1,3966 @@
+{
+	"info": {
+		"_postman_id": "dfff07b9-f9e5-4832-8502-f9ca00c66626",
+		"name": "FreeAgentsLoopback",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sports",
+			"item": [
+				{
+					"name": "get all sports",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/sports",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all active sports",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/sports?filter[where][active]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sports"
+							],
+							"query": [
+								{
+									"key": "filter[where][active]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all inactive sports",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Football\",\n    \"picture\": \"https://s3.amazon.com/football.png\",\n    \"active\": 1\n}"
+						},
+						"url": {
+							"raw": "{{url}}/sports?filter[where][active]=0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sports"
+							],
+							"query": [
+								{
+									"key": "filter[where][active]",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add sport",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Football\",\n    \"picture\": \"https://s3.amazon.com/football.png\",\n    \"active\": 1\n}"
+						},
+						"url": {
+							"raw": "{{url}}/sports",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit sport",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Football\",\n    \"picture\": \"https://s3.amazon.com/football.png\",\n    \"active\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/sports/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sports",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get sports count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/sports/count",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sports",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete sport",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/sports/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sports",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "skills",
+			"item": [
+				{
+					"name": "get all skills",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/skill",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"skill"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add skill",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"skill\": \"Test\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/skill",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"skill"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit skill",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"skill\": \"Testing2\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/skill/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"skill",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete skill",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/skill/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"skill",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user sports",
+			"item": [
+				{
+					"name": "get all user sports",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/usersports",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usersports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user sport by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/usersports/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usersports",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user sport by user id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/usersports?filter[where][user_id]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usersports"
+							],
+							"query": [
+								{
+									"key": "filter[where][user_id]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user sport",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"sport_id\": 2,\n    \"position_id\": 1,\n    \"skill_id\": 3\n}"
+						},
+						"url": {
+							"raw": "{{url}}/usersports",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usersports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit user sport",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"sport_id\": 2,\n    \"position_id\": 1,\n    \"skill_id\": 4\n}"
+						},
+						"url": {
+							"raw": "{{url}}/usersports/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usersports",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user sport",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/usersports/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usersports",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "positions",
+			"item": [
+				{
+					"name": "get all positions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/positions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get position by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/positions/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"positions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add position",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n    \"sport_id\": 4,\n    \"position\": \"Forward\"\n }"
+						},
+						"url": {
+							"raw": "{{url}}/positions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit position",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n    \"sport_id\": 4,\n    \"position\": \"Forwarding\"\n }"
+						},
+						"url": {
+							"raw": "{{url}}/positions/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"positions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete position",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/positions/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"positions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get position by sport",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/positions?filter[where][sport_id]=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"positions"
+							],
+							"query": [
+								{
+									"key": "filter[where][sport_id]",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "notifications",
+			"item": [
+				{
+					"name": "get all notifications",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/notifications",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all notifications for a user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/notifications?filter[where][to]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"notifications"
+							],
+							"query": [
+								{
+									"key": "filter[where][to]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add notification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"type\": \"friend_request_sent\",\n        \"to\": 2,\n        \"event_id\": null\n}"
+						},
+						"url": {
+							"raw": "{{url}}/notifications",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get  notifications count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/notifications/count",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"notifications",
+								"count"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "interested sports",
+			"item": [
+				{
+					"name": "get all interested sports",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/interestedsports",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"interestedsports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all interested sports for a user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/interestedsports?filter[where][user_id]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"interestedsports"
+							],
+							"query": [
+								{
+									"key": "filter[where][user_id]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add interested sport for user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"user_id\": 2,\n     \"sport_id\": 2\n}"
+						},
+						"url": {
+							"raw": "{{url}}/interestedsports",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"interestedsports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete interested sport",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/interestedsports/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"interestedsports",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ratings",
+			"item": [
+				{
+					"name": "get all ratings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/ratings",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ratings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all ratings user made",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/ratings?filter[where][rator]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ratings"
+							],
+							"query": [
+								{
+									"key": "filter[where][rator]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all ratings for user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/ratings?filter[where][ratee]=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ratings"
+							],
+							"query": [
+								{
+									"key": "filter[where][ratee]",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get count of all ratings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/ratings/count",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ratings",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get count of all ratings made by user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/ratings/count?[where][rator]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ratings",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][rator]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get count of all ratings for the user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/ratings/count?[where][ratee]=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ratings",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][ratee]",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add rating for user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rator\": 1,\n    \"ratee\": 3,\n    \"rating\": 4\n}"
+						},
+						"url": {
+							"raw": "{{url}}/ratings",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ratings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "fausers",
+			"item": [
+				{
+					"name": "Get Users by location and radius",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/fausers?filter[where][location][near]=70.05783800,-72.13718400&filter[where][location][maxDistance]=300",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fausers"
+							],
+							"query": [
+								{
+									"key": "filter[where][location][near]",
+									"value": "70.05783800,-72.13718400"
+								},
+								{
+									"key": "filter[where][location][maxDistance]",
+									"value": "300"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/fausers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fausers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/fausers/120",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fausers",
+								"120"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "count of users by state",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/fausers/count?[where][state]=NJ",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fausers",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][state]",
+									"value": "NJ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "count of users by zip code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/fausers/count?[where][zip_code]=08857",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fausers",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][zip_code]",
+									"value": "08857"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "count of users by city",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/fausers/count?[where][city]=Brick",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fausers",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][city]",
+									"value": "Brick"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users by state",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/fausers/?filter[where][state]=NJ",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fausers",
+								""
+							],
+							"query": [
+								{
+									"key": "filter[where][state]",
+									"value": "NJ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users by zip code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/fausers/?filter[where][zip_code]=08857",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fausers",
+								""
+							],
+							"query": [
+								{
+									"key": "filter[where][zip_code]",
+									"value": "08857"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users by city",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/fausers/?filter[where][city]=Brick",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fausers",
+								""
+							],
+							"query": [
+								{
+									"key": "filter[where][city]",
+									"value": "Brick"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add new user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first_name\": \"Dan\",\n  \"last_name\": \"Reale\",\n  \"email\": \"djreale@gmail.com\",\n  \"password\": \"danstest\",\n  \"phone\": \"1234567890\",\n  \"gender\": \"Male\",\n  \"birthday\": \"1986-07-14T01:08:42.205Z\",\n  \"city\": \"Brick\",\n  \"state\": \"NJ\",\n  \"zip_code\": \"08724\",\n  \"heard\": \"Facebook\",\n  \"latitude\": 0,\n  \"longitude\": 0,\n  \"location\": {\n    \"lat\": 40.12345,\n    \"lng\": -72.2343\n  },\n  \"device\": \"Android\",\n  \"browser\": \"Chrome\",\n  \"picture\": \"http://s3.amazon.com/default.png\",\n  \"bio\": \"I am a tester\",\n  \"nickname\": \"Tree\",\n  \"favorite_team\": \"Rangers\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/fausers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fausers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first_name\": \"Dan\",\n  \"last_name\": \"Reale\",\n  \"email\": \"djreale@gmail.com\",\n  \"password\": \"danstest\",\n  \"phone\": \"1234567890\",\n  \"gender\": \"Male\",\n  \"birthday\": \"1986-07-14T01:08:42.205Z\",\n  \"city\": \"Brick\",\n  \"state\": \"NJ\",\n  \"zip_code\": \"08724\",\n  \"heard\": \"Instagram\",\n  \"latitude\": 0,\n  \"longitude\": 0,\n  \"location\": {\n    \"lat\": 40.12345,\n    \"lng\": -72.2343\n  },\n  \"device\": \"Android\",\n  \"browser\": \"Chrome\",\n  \"picture\": \"http://s3.amazon.com/default.png\",\n  \"bio\": \"I am a tester\",\n  \"nickname\": \"Tree\",\n  \"favorite_team\": \"Rangers\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/fausers/1418",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fausers",
+								"1418"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/fausers/1418",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"fausers",
+								"1418"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "friends",
+			"item": [
+				{
+					"name": "get all friends",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get count of all friend requests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends/count",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all of friends I requested",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends?filter[where][requestor_id]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends"
+							],
+							"query": [
+								{
+									"key": "filter[where][requestor_id]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get count all of friends I requested",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends/count?[where][requestor_id]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][requestor_id]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all of my friends that someone else requested",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends?filter[where][acceptor_id]=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends"
+							],
+							"query": [
+								{
+									"key": "filter[where][acceptor_id]",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get count all of friends someone else requested",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends/count?[where][acceptor_id]=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][acceptor_id]",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all friends that I either accepted or requested",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends?filter[where][or][0][requestor_id]=1&filter[where][or][1][acceptor_id]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends"
+							],
+							"query": [
+								{
+									"key": "filter[where][or][0][requestor_id]",
+									"value": "1"
+								},
+								{
+									"key": "filter[where][or][1][acceptor_id]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all pending requests that I made",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends?filter[where][and][0][pending]=1&filter[where][and][1][requestor_id]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends"
+							],
+							"query": [
+								{
+									"key": "filter[where][and][0][pending]",
+									"value": "1"
+								},
+								{
+									"key": "filter[where][and][1][requestor_id]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all my pending requests that came from others",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends?filter[where][and][0][pending]=1&filter[where][and][1][acceptor_id]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends"
+							],
+							"query": [
+								{
+									"key": "filter[where][and][0][pending]",
+									"value": "1"
+								},
+								{
+									"key": "filter[where][and][1][acceptor_id]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all my accepted requests that I made",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends?filter[where][and][0][requestor_id]=1&filter[where][and][1][accepted]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends"
+							],
+							"query": [
+								{
+									"key": "filter[where][and][0][requestor_id]",
+									"value": "1"
+								},
+								{
+									"key": "filter[where][and][1][accepted]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all my accepted requests that others made",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends?filter[where][and][0][acceptor_id]=1&filter[where][and][1][accepted]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends"
+							],
+							"query": [
+								{
+									"key": "filter[where][and][0][acceptor_id]",
+									"value": "1"
+								},
+								{
+									"key": "filter[where][and][1][accepted]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all my pending requests that others made",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends?filter[where][and][0][acceptor_id]=1&filter[where][and][1][pending]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends"
+							],
+							"query": [
+								{
+									"key": "filter[where][and][0][acceptor_id]",
+									"value": "1"
+								},
+								{
+									"key": "filter[where][and][1][pending]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all my pending requests that i made",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends?filter[where][and][0][requestor_id]=1&filter[where][and][1][pending]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends"
+							],
+							"query": [
+								{
+									"key": "filter[where][and][0][requestor_id]",
+									"value": "1"
+								},
+								{
+									"key": "filter[where][and][1][pending]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all my declined requests that i made",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends?filter[where][and][0][requestor_id]=1&filter[where][and][1][declined]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends"
+							],
+							"query": [
+								{
+									"key": "filter[where][and][0][requestor_id]",
+									"value": "1"
+								},
+								{
+									"key": "filter[where][and][1][declined]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all my declined requests that others made",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends?filter[where][and][0][acceptor_id]=1&filter[where][and][1][declined]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends"
+							],
+							"query": [
+								{
+									"key": "filter[where][and][0][acceptor_id]",
+									"value": "1"
+								},
+								{
+									"key": "filter[where][and][1][declined]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all my deleted requests that others made",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends?filter[where][and][0][acceptor_id]=1&filter[where][and][1][deleted]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends"
+							],
+							"query": [
+								{
+									"key": "filter[where][and][0][acceptor_id]",
+									"value": "1"
+								},
+								{
+									"key": "filter[where][and][1][deleted]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all my deleted requests that I made",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends?filter[where][and][0][requestor_id]=1&filter[where][and][1][deleted]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends"
+							],
+							"query": [
+								{
+									"key": "filter[where][and][0][requestor_id]",
+									"value": "1"
+								},
+								{
+									"key": "filter[where][and][1][deleted]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send friend request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"requestor_id\": 1,\n        \"acceptor_id\": 8,\n        \"accepted\": 0,\n        \"declined\": 0,\n        \"pending\": 1,\n        \"deleted\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/friends",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accept friend request",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"requestor_id\": 1,\n        \"acceptor_id\": 8,\n        \"accepted\": 1,\n        \"declined\": 0,\n        \"pending\": 0,\n        \"deleted\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/friends/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "decline friend request",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"requestor_id\": 1,\n        \"acceptor_id\": 8,\n        \"accepted\": 0,\n        \"declined\": 1,\n        \"pending\": 0,\n        \"deleted\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/friends/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete friend",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"requestor_id\": 1,\n        \"acceptor_id\": 8,\n        \"accepted\": 0,\n        \"declined\": 0,\n        \"pending\": 0,\n        \"deleted\": 1\n}"
+						},
+						"url": {
+							"raw": "{{url}}/friends/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete friend completely",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/friends/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"friends",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sponsors",
+			"item": [
+				{
+					"name": "get all sponsors",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/sponsors",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sponsors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all sponsors count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/sponsors/count",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sponsors",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all sponsors by city",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/sponsors/?filter[where][city]=aberdeen",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sponsors",
+								""
+							],
+							"query": [
+								{
+									"key": "filter[where][city]",
+									"value": "aberdeen"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all sponsors by state",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/sponsors/?filter[where][state]=nj",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sponsors",
+								""
+							],
+							"query": [
+								{
+									"key": "filter[where][state]",
+									"value": "nj"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all sponsors by zip code",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/sponsors/?filter[where][zip_code]=08724",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sponsors",
+								""
+							],
+							"query": [
+								{
+									"key": "filter[where][zip_code]",
+									"value": "08724"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all sponsors by zip code count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/sponsors/count?[where][zip_code]=08724",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sponsors",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][zip_code]",
+									"value": "08724"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all sponsors by state count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/sponsors/count?[where][state]=nj",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sponsors",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][state]",
+									"value": "nj"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all sponsors by city count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/sponsors/count?[where][city]=aberdeen",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sponsors",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][city]",
+									"value": "aberdeen"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all sponsors by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/sponsors/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sponsors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all sponsors location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/sponsors/?filter[where][location][near]=70.05783800,-72.93718400&filter[where][location][maxDistance]=900",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sponsors",
+								""
+							],
+							"query": [
+								{
+									"key": "filter[where][location][near]",
+									"value": "70.05783800,-72.93718400"
+								},
+								{
+									"key": "filter[where][location][maxDistance]",
+									"value": "900"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add new sponsor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"name\": \"Tab Ramos\",\n        \"first_name\": \"Chris\",\n        \"last_name\": \"Gosha\",\n        \"email\": \"gosha21@gmail.com\",\n        \"phone\": \"7329993234\",\n        \"website\": \"tabramossportscenter.com\",\n        \"address1\": \"19 blair road\",\n        \"address2\": \"test\",\n        \"city\": \"brick\",\n        \"state\": \"nj\",\n        \"zip_code\": \"08724\",\n        \"location\": {\n            \"lng\": -73.9891,\n            \"lat\": -69.2846\n        },\n        \"logo\": \"tab.png\",\n        \"facebook\": \"www.facebook.com/tabramos\",\n        \"instagram\": \"www.instagram.com/tabramos\",\n        \"twitter\": \"wwww.twitter.com/tabramos\"\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/sponsors",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sponsors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit sponsor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"name\": \"Tab Ramos\",\n        \"first_name\": \"Chris\",\n        \"last_name\": \"Gosha\",\n        \"email\": \"gosha21@gmail.com\",\n        \"phone\": \"7329993234\",\n        \"website\": \"tabramossportscenter.com\",\n        \"address1\": \"19 blair road\",\n        \"address2\": \"1235\",\n        \"city\": \"brick\",\n        \"state\": \"nj\",\n        \"zip_code\": \"08724\",\n        \"location\": {\n            \"lng\": -73.9891,\n            \"lat\": -69.2846\n        },\n        \"logo\": \"tab.png\",\n        \"facebook\": \"www.facebook.com/tabramos\",\n        \"instagram\": \"www.instagram.com/tabramos\",\n        \"twitter\": \"wwww.twitter.com/tabramos\"\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/sponsors/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sponsors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch sponsor",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"twitter\": \"wwww.twitter.com/tabramos/testing2\"\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/sponsors/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sponsors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete sponsor",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/sponsors/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sponsors",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "advertisements",
+			"item": [
+				{
+					"name": "get all advertisements",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/advertisements",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"advertisements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get advertisements by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/advertisements/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"advertisements",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all advertisements by city",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/advertisements/?filter[where][city]=aberdeen",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"advertisements",
+								""
+							],
+							"query": [
+								{
+									"key": "filter[where][city]",
+									"value": "aberdeen"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all advertisements by state",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/advertisements/?filter[where][state]=nj",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"advertisements",
+								""
+							],
+							"query": [
+								{
+									"key": "filter[where][state]",
+									"value": "nj"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all advertisements by zip",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/advertisements/?filter[where][zip_code]=08724",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"advertisements",
+								""
+							],
+							"query": [
+								{
+									"key": "filter[where][zip_code]",
+									"value": "08724"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all advertisements by sponsor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/advertisements/?filter[where][sponsor_id]=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"advertisements",
+								""
+							],
+							"query": [
+								{
+									"key": "filter[where][sponsor_id]",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all current advertisements",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/advertisements?filter[where][start_date][gt]=2018-01-01&filter[where][end_date][lt]=2018-11-13",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"advertisements"
+							],
+							"query": [
+								{
+									"key": "filter[where][start_date][gt]",
+									"value": "2018-01-01"
+								},
+								{
+									"key": "filter[where][end_date][lt]",
+									"value": "2018-11-13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get advertisements by radius",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/advertisements?filter[where][location][near]=70.05783800,-72.13718400&filter[where][location][maxDistance]=300",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"advertisements"
+							],
+							"query": [
+								{
+									"key": "filter[where][location][near]",
+									"value": "70.05783800,-72.13718400"
+								},
+								{
+									"key": "filter[where][location][maxDistance]",
+									"value": "300"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add advertisement",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"sponsor_id\": 2,\n        \"text\": null,\n        \"image\": null,\n        \"url\": null,\n        \"phone\": null,\n        \"phone_ext\": null,\n        \"start_date\": \"2018-10-07T00:00:00.000Z\",\n        \"end_date\": \"2018-11-12T00:00:00.000Z\",\n        \"radius\": 10,\n        \"city\": \"aberdeen\",\n        \"state\": \"nj\",\n        \"zip_code\": \"08724\",\n        \"location\": {\n        \t\"lat\": \"40.12345\",\n        \t\"lng\": \"-72.3652\"\n        }\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/advertisements",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"advertisements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit advertisement",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"sponsor_id\": 2,\n        \"text\": \"dans test\",\n        \"image\": null,\n        \"url\": null,\n        \"phone\": null,\n        \"phone_ext\": null,\n        \"start_date\": \"2018-10-07T00:00:00.000Z\",\n        \"end_date\": \"2018-11-12T00:00:00.000Z\",\n        \"radius\": 10,\n        \"city\": \"aberdeen\",\n        \"state\": \"nj\",\n        \"zip_code\": \"08724\",\n        \"location\": {\n        \t\"lat\": \"40.12345\",\n        \t\"lng\": \"-72.3652\"\n        }\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/advertisements/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"advertisements",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete advertisement",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"sponsor_id\": 2,\n        \"text\": \"dans test\",\n        \"image\": null,\n        \"url\": null,\n        \"phone\": null,\n        \"phone_ext\": null,\n        \"start_date\": \"2018-10-07T00:00:00.000Z\",\n        \"end_date\": \"2018-11-12T00:00:00.000Z\",\n        \"radius\": 10,\n        \"city\": \"aberdeen\",\n        \"state\": \"nj\",\n        \"zip_code\": \"08724\",\n        \"location\": {\n        \t\"lat\": \"40.12345\",\n        \t\"lng\": \"-72.3652\"\n        }\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/advertisements/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"advertisements",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "eventusers",
+			"item": [
+				{
+					"name": "get all event users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"sponsor_id\": 2,\n        \"text\": \"dans test\",\n        \"image\": null,\n        \"url\": null,\n        \"phone\": null,\n        \"phone_ext\": null,\n        \"start_date\": \"2018-10-07T00:00:00.000Z\",\n        \"end_date\": \"2018-11-12T00:00:00.000Z\",\n        \"radius\": 10,\n        \"city\": \"aberdeen\",\n        \"state\": \"nj\",\n        \"zip_code\": \"08724\",\n        \"location\": {\n        \t\"lat\": \"40.12345\",\n        \t\"lng\": \"-72.3652\"\n        }\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/eventusers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"eventusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all event users by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"sponsor_id\": 2,\n        \"text\": \"dans test\",\n        \"image\": null,\n        \"url\": null,\n        \"phone\": null,\n        \"phone_ext\": null,\n        \"start_date\": \"2018-10-07T00:00:00.000Z\",\n        \"end_date\": \"2018-11-12T00:00:00.000Z\",\n        \"radius\": 10,\n        \"city\": \"aberdeen\",\n        \"state\": \"nj\",\n        \"zip_code\": \"08724\",\n        \"location\": {\n        \t\"lat\": \"40.12345\",\n        \t\"lng\": \"-72.3652\"\n        }\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/eventusers/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"eventusers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all event users by event id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"sponsor_id\": 2,\n        \"text\": \"dans test\",\n        \"image\": null,\n        \"url\": null,\n        \"phone\": null,\n        \"phone_ext\": null,\n        \"start_date\": \"2018-10-07T00:00:00.000Z\",\n        \"end_date\": \"2018-11-12T00:00:00.000Z\",\n        \"radius\": 10,\n        \"city\": \"aberdeen\",\n        \"state\": \"nj\",\n        \"zip_code\": \"08724\",\n        \"location\": {\n        \t\"lat\": \"40.12345\",\n        \t\"lng\": \"-72.3652\"\n        }\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/eventusers?filter[where][event_id]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"eventusers"
+							],
+							"query": [
+								{
+									"key": "filter[where][event_id]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all interested event users by event id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"sponsor_id\": 2,\n        \"text\": \"dans test\",\n        \"image\": null,\n        \"url\": null,\n        \"phone\": null,\n        \"phone_ext\": null,\n        \"start_date\": \"2018-10-07T00:00:00.000Z\",\n        \"end_date\": \"2018-11-12T00:00:00.000Z\",\n        \"radius\": 10,\n        \"city\": \"aberdeen\",\n        \"state\": \"nj\",\n        \"zip_code\": \"08724\",\n        \"location\": {\n        \t\"lat\": \"40.12345\",\n        \t\"lng\": \"-72.3652\"\n        }\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/eventusers?filter[where][event_id]=1&filter[where][interested]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"eventusers"
+							],
+							"query": [
+								{
+									"key": "filter[where][event_id]",
+									"value": "1"
+								},
+								{
+									"key": "filter[where][interested]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all accepted event users by event id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"sponsor_id\": 2,\n        \"text\": \"dans test\",\n        \"image\": null,\n        \"url\": null,\n        \"phone\": null,\n        \"phone_ext\": null,\n        \"start_date\": \"2018-10-07T00:00:00.000Z\",\n        \"end_date\": \"2018-11-12T00:00:00.000Z\",\n        \"radius\": 10,\n        \"city\": \"aberdeen\",\n        \"state\": \"nj\",\n        \"zip_code\": \"08724\",\n        \"location\": {\n        \t\"lat\": \"40.12345\",\n        \t\"lng\": \"-72.3652\"\n        }\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/eventusers?filter[where][event_id]=1&filter[where][accepted]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"eventusers"
+							],
+							"query": [
+								{
+									"key": "filter[where][event_id]",
+									"value": "1"
+								},
+								{
+									"key": "filter[where][accepted]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all rejected event users by event id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"sponsor_id\": 2,\n        \"text\": \"dans test\",\n        \"image\": null,\n        \"url\": null,\n        \"phone\": null,\n        \"phone_ext\": null,\n        \"start_date\": \"2018-10-07T00:00:00.000Z\",\n        \"end_date\": \"2018-11-12T00:00:00.000Z\",\n        \"radius\": 10,\n        \"city\": \"aberdeen\",\n        \"state\": \"nj\",\n        \"zip_code\": \"08724\",\n        \"location\": {\n        \t\"lat\": \"40.12345\",\n        \t\"lng\": \"-72.3652\"\n        }\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/eventusers?filter[where][event_id]=1&filter[where][rejected]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"eventusers"
+							],
+							"query": [
+								{
+									"key": "filter[where][event_id]",
+									"value": "1"
+								},
+								{
+									"key": "filter[where][rejected]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all interested event users by event id count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"sponsor_id\": 2,\n        \"text\": \"dans test\",\n        \"image\": null,\n        \"url\": null,\n        \"phone\": null,\n        \"phone_ext\": null,\n        \"start_date\": \"2018-10-07T00:00:00.000Z\",\n        \"end_date\": \"2018-11-12T00:00:00.000Z\",\n        \"radius\": 10,\n        \"city\": \"aberdeen\",\n        \"state\": \"nj\",\n        \"zip_code\": \"08724\",\n        \"location\": {\n        \t\"lat\": \"40.12345\",\n        \t\"lng\": \"-72.3652\"\n        }\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/eventusers/count?[where][event_id]=1&[where][interested]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"eventusers",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][event_id]",
+									"value": "1"
+								},
+								{
+									"key": "[where][interested]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all accepted event users by event id count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"sponsor_id\": 2,\n        \"text\": \"dans test\",\n        \"image\": null,\n        \"url\": null,\n        \"phone\": null,\n        \"phone_ext\": null,\n        \"start_date\": \"2018-10-07T00:00:00.000Z\",\n        \"end_date\": \"2018-11-12T00:00:00.000Z\",\n        \"radius\": 10,\n        \"city\": \"aberdeen\",\n        \"state\": \"nj\",\n        \"zip_code\": \"08724\",\n        \"location\": {\n        \t\"lat\": \"40.12345\",\n        \t\"lng\": \"-72.3652\"\n        }\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/eventusers/count?[where][event_id]=1&[where][accepted]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"eventusers",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][event_id]",
+									"value": "1"
+								},
+								{
+									"key": "[where][accepted]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all rejected event users by event id count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"sponsor_id\": 2,\n        \"text\": \"dans test\",\n        \"image\": null,\n        \"url\": null,\n        \"phone\": null,\n        \"phone_ext\": null,\n        \"start_date\": \"2018-10-07T00:00:00.000Z\",\n        \"end_date\": \"2018-11-12T00:00:00.000Z\",\n        \"radius\": 10,\n        \"city\": \"aberdeen\",\n        \"state\": \"nj\",\n        \"zip_code\": \"08724\",\n        \"location\": {\n        \t\"lat\": \"40.12345\",\n        \t\"lng\": \"-72.3652\"\n        }\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/eventusers/count?[where][event_id]=1&[where][rejected]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"eventusers",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][event_id]",
+									"value": "1"
+								},
+								{
+									"key": "[where][rejected]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "interested in event",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/eventusers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"eventusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accepted to event",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 0,\n        \"accepted\": 1,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/eventusers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"eventusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rejected to event",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 0,\n        \"accepted\": 0,\n        \"rejected\": 1\n}"
+						},
+						"url": {
+							"raw": "{{url}}/eventusers/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"eventusers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unreject user to event and set back to interested",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/eventusers/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"eventusers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "events",
+			"item": [
+				{
+					"name": "get all events",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/events?filter[where][date][gt]=2018-12-15",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "filter[where][date][gt]",
+									"value": "2018-12-15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add events",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"creator\": 1,\n        \"sport_id\": 4,\n        \"position_id\": 3,\n        \"description\": \"need goalie for game tonight at tab\",\n        \"date\": \"2018-11-11T10:20:00.000Z\",\n        \"address\": \"123 testing way\",\n        \"address2\": \"box 123\",\n        \"city\": \"aberdeen\",\n        \"state\": \"NJ\",\n        \"zip\": \"07747\",\n        \"location\": {\n        \t\"lat\": \"40.213\",\n        \t\"lng\": \"-70.343\"\n        },\n        \"players\": 0\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/events",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit event",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"creator\": 1,\n        \"sport_id\": 4,\n        \"position_id\": 3,\n        \"description\": \"need goalie for game tonight at tab\",\n        \"date\": \"2018-11-11T10:40:00.000Z\",\n        \"address\": \"123 testing way\",\n        \"address2\": \"box 123\",\n        \"city\": \"aberdeen\",\n        \"state\": \"NJ\",\n        \"zip\": \"07747\",\n        \"location\": {\n        \t\"lat\": \"40.213\",\n        \t\"lng\": \"-70.343\"\n        },\n        \"players\": 3\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/events/204",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"204"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete event",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/events/205",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"205"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all events that are active",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/events?filter[where][date][gt]=2018-12-15",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "filter[where][date][gt]",
+									"value": "2018-12-15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all events that are active by state",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/events?filter[where][date][gt]=2018-07-15&filter[where][state]=NJ",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "filter[where][date][gt]",
+									"value": "2018-07-15"
+								},
+								{
+									"key": "filter[where][state]",
+									"value": "NJ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all events that are active by city",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/events?filter[where][date][gt]=2018-07-15&filter[where][city]=Brick",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "filter[where][date][gt]",
+									"value": "2018-07-15"
+								},
+								{
+									"key": "filter[where][city]",
+									"value": "Brick"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all events that are active by zip",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/events?filter[where][date][gt]=2018-07-15&filter[where][zip]=08724",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "filter[where][date][gt]",
+									"value": "2018-07-15"
+								},
+								{
+									"key": "filter[where][zip]",
+									"value": "08724"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all events that are active by state by sport",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/events?filter[where][date][gt]=2018-07-15&filter[where][state]=NJ&filter[where][sport_id]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "filter[where][date][gt]",
+									"value": "2018-07-15"
+								},
+								{
+									"key": "filter[where][state]",
+									"value": "NJ"
+								},
+								{
+									"key": "filter[where][sport_id]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all events that are active by city by sport",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/events?filter[where][date][gt]=2018-07-15&filter[where][city]=Brick&filter[where][sport_id]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "filter[where][date][gt]",
+									"value": "2018-07-15"
+								},
+								{
+									"key": "filter[where][city]",
+									"value": "Brick"
+								},
+								{
+									"key": "filter[where][sport_id]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all events that are active by zip by sport",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/events?filter[where][date][gt]=2018-07-15&filter[where][zip]=08724&filter[where][sport_id]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "filter[where][date][gt]",
+									"value": "2018-07-15"
+								},
+								{
+									"key": "filter[where][zip]",
+									"value": "08724"
+								},
+								{
+									"key": "filter[where][sport_id]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all events by radius and sport and date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/events?filter[where][location][near]=70.05783800,-72.13718400&filter[where][location][maxDistance]=600&filter[where][sport_id]=4&filter[where][date][gt]=2018-08-01",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "filter[where][location][near]",
+									"value": "70.05783800,-72.13718400"
+								},
+								{
+									"key": "filter[where][location][maxDistance]",
+									"value": "600"
+								},
+								{
+									"key": "filter[where][sport_id]",
+									"value": "4"
+								},
+								{
+									"key": "filter[where][date][gt]",
+									"value": "2018-08-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all events that are active count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/events/count?[where][date][gt]=2018-12-15",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][date][gt]",
+									"value": "2018-12-15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all events that are active by state count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/events/count?[where][date][gt]=2018-07-15&[where][state]=NJ",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][date][gt]",
+									"value": "2018-07-15"
+								},
+								{
+									"key": "[where][state]",
+									"value": "NJ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all events that are active by city count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/events/count?[where][date][gt]=2018-07-15&[where][city]=Brick",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][date][gt]",
+									"value": "2018-07-15"
+								},
+								{
+									"key": "[where][city]",
+									"value": "Brick"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all events that are active by zip by sport count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/events/count?[where][date][gt]=2018-07-15&[where][zip]=08724&[where][sport_id]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][date][gt]",
+									"value": "2018-07-15"
+								},
+								{
+									"key": "[where][zip]",
+									"value": "08724"
+								},
+								{
+									"key": "[where][sport_id]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all events that are active by zip count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/events/count?[where][date][gt]=2018-07-15&[where][zip]=08724",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][date][gt]",
+									"value": "2018-07-15"
+								},
+								{
+									"key": "[where][zip]",
+									"value": "08724"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all events that are active by state by sport count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/events/count?[where][date][gt]=2018-07-15&[where][state]=NJ&[where][sport_id]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][date][gt]",
+									"value": "2018-07-15"
+								},
+								{
+									"key": "[where][state]",
+									"value": "NJ"
+								},
+								{
+									"key": "[where][sport_id]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all events that are active by city by sport count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"event_id\": 1,\n        \"user_id\": 3,\n        \"interested\": 1,\n        \"accepted\": 0,\n        \"rejected\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/events/count?[where][date][gt]=2018-07-15&[where][city]=Brick&[where][sport_id]=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"events",
+								"count"
+							],
+							"query": [
+								{
+									"key": "[where][date][gt]",
+									"value": "2018-07-15"
+								},
+								{
+									"key": "[where][city]",
+									"value": "Brick"
+								},
+								{
+									"key": "[where][sport_id]",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
